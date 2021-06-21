@@ -20,9 +20,10 @@ def distancia(pos):
         distancias.append(long)
     return distancias
 
-sec = readFasta(sys.argv[1])
-sec_rc = reverse_complement(sec)
+if __name__ == "__main__":
+    sec = readFasta(sys.argv[1])
+    sec_rc = reverse_complement(sec)
 
-for n in [0,1,2]:
-    print(f"Distancias para +{n+1}F:\n{distancia(marcoLectura(sec, n))}")
-    print(f"Distancias para -{n+1}R:\n{distancia(marcoLectura(sec_rc, n))}")
+    for n in [0,1,2]:
+        print(f"Distancias para +{n+1}F:\n{distancia(marcoLectura(sec, n))}")
+        print(f"Distancias para -{n+1}R:\n{distancia(marcoLectura(sec_rc, n))}")
