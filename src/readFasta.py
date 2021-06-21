@@ -5,7 +5,7 @@ def readFasta(FASTA):
     seq = ""
 
     for i in lines:
-        if ">" in i:
+        if ">>" in i:
             pass
         else:
             seq += i.strip()
