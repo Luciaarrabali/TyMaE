@@ -16,5 +16,6 @@ def reverse_complement(seq):
 
 if __name__ == "__main__":
     sec = readFasta(sys.argv[1])
+    print("Secuencia:\n" + sec + "\n")
     print("Secuencia reversa:\n" + reverse(sec) + "\n")
     print("Secuencia reversa complementaria:\n" + reverse_complement(sec))
