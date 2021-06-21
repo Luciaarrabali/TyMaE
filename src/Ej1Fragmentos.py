@@ -1,5 +1,6 @@
-from src.readFasta import readFasta
-from src.Ej2Secuencias import reverse_complement
+from readFasta import readFasta
+from Ej2Secuencias import reverse_complement
+import sys
 
 # Marco de lectura
 def marcoLectura(seq, n):
@@ -19,7 +20,7 @@ def distancia(pos):
         distancias.append(long)
     return distancias
 
-sec = readFasta("../sources/Seq.fasta")
+sec = readFasta(sys.argv[1])
 sec_rc = reverse_complement(sec)
 
 for n in [0,1,2]:
