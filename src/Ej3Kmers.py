@@ -1,9 +1,6 @@
 from readFasta import readFasta
 import sys
 
-path = sys.argv[1]
-k = sys.argv[2]
-
 def kmers(seq, k):
     kmer = {}
     length = len(seq)
@@ -16,6 +13,8 @@ def kmers(seq, k):
             kmer[numKmers] += 1
     kmer = kmer_relative(kmer, length, k)
 
+    return kmer
+
 def kmer_relative(kmer, sequence_length, k):
     for count in kmer:
         n = kmer[count]
@@ -23,4 +22,7 @@ def kmer_relative(kmer, sequence_length, k):
     return kmer
 
 if __name__ == "__main__":
-    main()
+    sec = readFasta(sys.argv[1])
+    k = sys.argv[2]
+    for k in range(len(sec)-1):
+        print(f"Frecuencia de K-mers absolutas y relativas para {k} mers son:\n{kmers(sec, k)}")
