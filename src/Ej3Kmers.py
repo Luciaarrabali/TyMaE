@@ -24,5 +24,5 @@ def kmer_relative(kmer, sequence_length, k):
 if __name__ == "__main__":
     sec = readFasta(sys.argv[1])
     k = sys.argv[2]
-    for k in range(len(sec)-1):
+    for k in [1, 2]:
         print(f"Frecuencia de K-mers absolutas y relativas para {k} mers son:\n{kmers(sec, k)}")
