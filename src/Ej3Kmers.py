@@ -14,7 +14,13 @@ def kmers(seq, k):
             kmer[numKmers] = 1
         else:
             kmer[numKmers] += 1
-    kmer = compute_relative()
+    kmer = kmer_relative(kmer, length, k)
+
+def kmer_relative(kmer, sequence_length, k):
+    for count in kmer:
+        n = kmer[count]
+        kmer[count] = (n, round(n/(sequence_length-k+1), 6))
+    return kmer
 
 if __name__ == "__main__":
     main()
